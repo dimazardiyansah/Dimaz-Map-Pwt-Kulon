@@ -14,11 +14,9 @@
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
+        #map {
+            width: 1236px;
+            height: 627px;
         }
         </style>
         <title></title>
@@ -56,7 +54,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.4416522335194575,109.22051209558079],[-7.423713764878402,109.25592980806569]]);
+        }).fitBounds([[-7.4362391744664915,109.23844622960463],[-7.426983960401184,109.25671972425518]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -220,7 +218,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(150,150,150,1.0)',
+                fillColor: 'rgba(150,150,150,0.0)',
                 interactive: true,
             }
         }
@@ -245,6 +243,9 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Kuburan'] !== null ? autolinker.link(feature.properties['Kuburan'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Lebar'] !== null ? autolinker.link(feature.properties['Lebar'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -300,427 +301,7 @@
         }
 
         function style_RT_3_0(feature) {
-            switch(String(feature.properties['RT RW'])) {
-                case '1/2':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(202,0,32,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '1/3':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(208,24,46,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '1/4':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(214,47,60,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '1/5':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(220,71,74,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '1/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(226,94,88,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '2/1':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(232,118,102,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '2/2':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(238,141,116,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '2/3':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(244,165,130,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '2/4':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(246,178,148,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '2/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(247,191,166,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/1':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(249,204,184,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/2':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(250,216,201,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/3':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(252,229,219,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/4':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(253,242,237,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/5':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '3/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(245,245,245,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '4/1':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(235,235,235,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '4/2':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(225,225,225,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '4/4':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(216,216,216,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '4/5':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(206,206,206,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '4/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(196,196,196,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '5/1':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(186,186,186,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '5/2':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(169,169,169,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '5/4':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(151,151,151,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '5/5':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(134,134,134,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '5/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(116,116,116,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '6/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(99,99,99,1.0)',
-                interactive: true,
-            }
-                    break;
-                case '7/6':
-                    return {
-                pane: 'pane_RT_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(81,81,81,1.0)',
-                interactive: true,
-            }
-                    break;
+            switch(String(feature.properties['id'])) {
                 default:
                     return {
                 pane: 'pane_RT_3',
@@ -732,7 +313,472 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(64,64,64,1.0)',
+                fillColor: 'rgba(247,251,255,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(241,247,253,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(235,243,251,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(228,239,249,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(222,235,247,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(216,231,245,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(210,227,243,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(204,223,241,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(198,219,239,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(189,215,236,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '11':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(179,211,232,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(169,207,229,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '13':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(159,202,225,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '14':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(146,196,223,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '15':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(134,189,220,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '16':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(121,182,217,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '17':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(109,175,214,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '18':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(98,168,211,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '19':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(88,161,207,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '20':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(78,154,203,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(68,147,199,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(59,139,194,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '23':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,131,190,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '24':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,123,186,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '25':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(34,114,182,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '26':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(27,106,175,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '27':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(21,97,169,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '28':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(14,89,162,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '29':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,80,154,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '30':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,69,139,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '31':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,59,123,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '32':
+                    return {
+                pane: 'pane_RT_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,48,107,1.0)',
                 interactive: true,
             }
                     break;
@@ -1191,14 +1237,14 @@
             return {
                 pane: 'pane_pwt_kulon_poly_6',
                 opacity: 1,
-                color: 'rgba(128,14,16,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(247,251,255,0.0)',
+                fillColor: 'rgba(213,129,76,0.0)',
                 interactive: true,
             }
         }
@@ -1274,9 +1320,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['FOOD'] !== null ? autolinker.link(feature.properties['FOOD'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Ukuran '] !== null ? autolinker.link(feature.properties['Ukuran '].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1602,12 +1645,10 @@
         function pop_Masjid_13(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">id</th>\
-                        <td>' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Masjid</th>\
-                        <td>' + (feature.properties['Masjid'] !== null ? autolinker.link(feature.properties['Masjid'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Masjid'] !== null ? autolinker.link(feature.properties['Masjid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -1659,31 +1700,6 @@
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
-        var overlaysTree = [
-            {label: '<img src="legend/Masjid_13.png" /> Masjid', layer: layer_Masjid_13},
-            {label: '<img src="legend/Penginapan_12.png" /> Penginapan', layer: layer_Penginapan_12},
-            {label: '<img src="legend/SCHOOL_11.png" /> SCHOOL', layer: layer_SCHOOL_11},
-            {label: '<img src="legend/sungai_10.png" /> sungai', layer: layer_sungai_10},
-            {label: '<img src="legend/Sawah_9.png" /> Sawah ', layer: layer_Sawah_9},
-            {label: '<img src="legend/FOOD_8.png" /> FOOD', layer: layer_FOOD_8},
-            {label: '<img src="legend/TOKO_7.png" /> TOKO', layer: layer_TOKO_7},
-            {label: '<img src="legend/pwt_kulon_poly_6.png" /> pwt_kulon_poly', layer: layer_pwt_kulon_poly_6},
-            {label: '<img src="legend/Purwokerto_Kulon_GIS_line_5.png" /> Purwokerto_Kulon_GIS_line', layer: layer_Purwokerto_Kulon_GIS_line_5},
-            {label: '<img src="legend/RWPWT_4.png" /> RWPWT', layer: layer_RWPWT_4},
-            {label: 'RT<br /><table><tr><td style="text-align: center;"><img src="legend/RT_3_120.png" /></td><td>1/2</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_131.png" /></td><td>1/3</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_142.png" /></td><td>1/4</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_153.png" /></td><td>1/5</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_164.png" /></td><td>1/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_215.png" /></td><td>2/1</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_226.png" /></td><td>2/2</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_237.png" /></td><td>2/3</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_248.png" /></td><td>2/4</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_269.png" /></td><td>2/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3110.png" /></td><td>3/1</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3211.png" /></td><td>3/2</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3312.png" /></td><td>3/3</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3413.png" /></td><td>3/4</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3514.png" /></td><td>3/5</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_3615.png" /></td><td>3/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_4116.png" /></td><td>4/1</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_4217.png" /></td><td>4/2</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_4418.png" /></td><td>4/4</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_4519.png" /></td><td>4/5</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_4620.png" /></td><td>4/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_5121.png" /></td><td>5/1</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_5222.png" /></td><td>5/2</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_5423.png" /></td><td>5/4</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_5524.png" /></td><td>5/5</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_5625.png" /></td><td>5/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_6626.png" /></td><td>6/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_7627.png" /></td><td>7/6</td></tr><tr><td style="text-align: center;"><img src="legend/RT_3_28.png" /></td><td></td></tr></table>', layer: layer_RT_3},
-            {label: '<img src="legend/Kuburan_2.png" /> Kuburan', layer: layer_Kuburan_2},
-            {label: '<img src="legend/ADMINISTRASIDESA_AR_25K_1.png" /> ADMINISTRASIDESA_AR_25K', layer: layer_ADMINISTRASIDESA_AR_25K_1},
-            {label: "OpenStreetMap", layer: layer_OpenStreetMap_0},]
-        var lay = L.control.layers.tree(null, overlaysTree,{
-            //namedToggle: true,
-            //selectorBack: false,
-            //closedSymbol: '&#8862; &#x1f5c0;',
-            //openedSymbol: '&#8863; &#x1f5c1;',
-            //collapseAll: 'Collapse all',
-            //expandAll: 'Expand all',
-            collapsed: true,
-        });
-        lay.addTo(map);
         setBounds();
         var i = 0;
         layer_ADMINISTRASIDESA_AR_25K_1.eachLayer(function(layer) {
@@ -1712,6 +1728,19 @@
               i++;
         });
         var i = 0;
+        layer_RT_3.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['RT RW'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['RT RW']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_RT_3'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
         layer_RWPWT_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
@@ -1730,7 +1759,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['name'] !== null?String('<div style="color: #000000; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Purwokerto_Kulon_GIS_line_5'});
+            layer.bindTooltip((layer.feature.properties['name'] !== null?String('<div style="color: #ff3232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Purwokerto_Kulon_GIS_line_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1777,19 +1806,6 @@
               i++;
         });
         var i = 0;
-        layer_sungai_10.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['name'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['name']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_sungai_10'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
-        var i = 0;
         layer_SCHOOL_11.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
@@ -1828,15 +1844,15 @@
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_sungai_10,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
+        resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RT_3,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
         map.on("zoomend", function(){
-            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_sungai_10,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
+            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RT_3,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_sungai_10,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
+            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RT_3,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_sungai_10,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
+            resetLabels([layer_ADMINISTRASIDESA_AR_25K_1,layer_Kuburan_2,layer_RT_3,layer_RWPWT_4,layer_Purwokerto_Kulon_GIS_line_5,layer_pwt_kulon_poly_6,layer_TOKO_7,layer_FOOD_8,layer_SCHOOL_11,layer_Penginapan_12,layer_Masjid_13]);
         });
         </script>
     </body>
